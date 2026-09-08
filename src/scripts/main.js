@@ -2,15 +2,13 @@
 
 const populations = [...document.querySelectorAll('.population')];
 
-const numbers = populations.map((population) =>
-  Number(population.textContent.split(',').join('')),
-  );
+const numbers = populations.map((population) => {
+  return Number(population.textContent.split(',').join(''));
+});
 
 function calculateTotal() {
   return numbers.reduce((acc, number) => acc + number, 0);
 }
-
-calculateTotal();
 
 function calculateAverage() {
   return Math.round(calculateTotal() / numbers.length);
